@@ -1,10 +1,16 @@
-<h1>Hi participant!</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-<%= form_for @participant, url: { action: :create } do |f| %>
-  <%= render partial: 'shared/error_messages', locals: { model: @participant } %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: false, class: 'form-control' %>
+    <h1>Hi participant!</h1>
+
+    <%= form_for @participant, url: { action: :create } do |f| %>
+      <%= render partial: 'shared/error_messages', locals: { model: @participant } %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: false, class: 'form-control' %>
+      </div>
+      <%= f.submit "Enter session", class: 'btn btn-info' %>
+    <% end %>
+
   </div>
-  <%= f.submit "Enter session", class: 'btn btn-info' %>
-<% end %>
+</div>
