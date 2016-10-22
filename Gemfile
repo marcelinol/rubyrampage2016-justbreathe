@@ -19,6 +19,7 @@ gem 'timepiece'
 ## Infra
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'informant-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
