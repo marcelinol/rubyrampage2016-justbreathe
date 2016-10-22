@@ -8,11 +8,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <center><%= image_tag('meditation.svg', height: 50, width: 83.15) %></center>
   </head>
 
   <body>
     <div class="container">
+      <div class="row">
+        <div class="col-md-1 col-md-offset-5">
+          <%= link_to root_path do %>
+            <%= image_tag('meditation.svg', height: 50, width: 83.15) %>
+          <% end %>
+        </div>
+      </div>
+
       <%= yield %>
     </div>
   </body>
