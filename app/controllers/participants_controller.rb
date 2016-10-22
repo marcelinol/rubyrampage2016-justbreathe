@@ -1,6 +1,10 @@
 class ParticipantsController < ApplicationController
   def new
-    @participant = meditation_session.participants.build
+    if meditation_session.started?
+      redirect_to root_path
+    else
+      @participant = meditation_session.participants.build
+    end
   end
 
   def create
@@ -19,6 +23,6 @@ class ParticipantsController < ApplicationController
   end
 
   def meditation_session
-    MeditationSession.find(params[:meditation_session_id])
+    @meditation_session ||= MeditationSession.find(params[:meditation_session_id])
   end
 end
