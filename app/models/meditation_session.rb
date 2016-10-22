@@ -4,5 +4,5 @@ class MeditationSession < ApplicationRecord
 
   enum status: [ :waiting, :started, :finished ]
 
-  validates :duration, presence: true
+  validates :duration, presence: true, numericality: { greater_than: 0 }
 end

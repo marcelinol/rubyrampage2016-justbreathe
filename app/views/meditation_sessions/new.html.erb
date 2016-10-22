@@ -3,7 +3,7 @@
 <%= form_for @session, url: { action: :create } do |f| %>
   <p>
     <%= f.label :duration %>
-    <%= f.number_field :duration, required: true %>
+    <%= f.number_field :duration, required: true, min: 1 %>
   </p>
 
   <p>Participant</p>
