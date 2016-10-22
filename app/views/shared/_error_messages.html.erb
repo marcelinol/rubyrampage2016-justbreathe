@@ -1,9 +1,10 @@
 <% unless model.errors.empty? %>
   <div id="errors">
-    <ul>
       <% model.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span> <%= error %>
+      </div>
       <% end %>
-    </ul>
   </div>
 <% end %>
