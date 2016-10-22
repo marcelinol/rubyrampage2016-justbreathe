@@ -13,10 +13,14 @@
 </p>
 
 <p>
-  Participants: <%= @session.participants.pluck(:name).join(', ') %>
+  <div id='participants'>
+    Participants: <%= @session.participants.pluck(:name).join(', ') %>
+  </div>
 </p>
 
 <%= form_for @session, url: { action: :update } do |f| %>
   <%= f.hidden_field(:status, value: 'started') %>
   <%= f.submit 'Start Meditating' %>
 <% end %>
+
+<%= javascript_include_tag 'meditation_session/session_updater' %>
