@@ -5,10 +5,10 @@
     $.ajax({
       url: location.pathname,
       type: 'GET',
-      dataType: "json",
+      dataType: "json"
     }).success(function(data) {
       var sessionData = data.meditation_session;
-      if(sessionData.status == 'started') {
+      if(sessionData.status === 'started') {
         location.reload();
       } else {
         $('#participants').text('Participants: ' + sessionData.participants);
