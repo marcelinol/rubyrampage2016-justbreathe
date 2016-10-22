@@ -1,5 +1,5 @@
 <p>
-  Duration: <%= @session.duration %> minutes
+  <strong>Duration:</strong> <%= @session.duration %> minutes
 </p>
 
 <p>
@@ -12,15 +12,14 @@
   </a>
 </p>
 
-<p>
-  <div id='participants'>
-    Participants: <%= @session.participants.pluck(:name).join(', ') %>
-  </div>
-</p>
+<div id='participants'>
+  Participants: <%= @session.participants.pluck(:name).join(', ') %>
+</div>
+<hr class="spacer-md"/>
 
 <%= form_for @session, url: { action: :update } do |f| %>
   <%= f.hidden_field :status, value: :started %>
-  <%= f.submit 'Start Meditating', class: 'btn btn-success btn-lg' %>
+  <%= f.submit 'Start Meditating', class: 'btn btn-success btn-lg btn-block' %>
 <% end %>
 
 <%= javascript_include_tag 'meditation_session/session_updater' %>
