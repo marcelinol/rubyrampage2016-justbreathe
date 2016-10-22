@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Find a meditation session by ID</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag meditation_sessions_search_path, method: :get do %>
+          <div class="form-group">
+            <%= label_tag :q, 'Meditation session ID' %>
+            <%= number_field_tag :q, nil, class: 'form-control' %>
+          </div>
+          <%= submit_tag 'Go', class: 'btn btn-primary btn-lg btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

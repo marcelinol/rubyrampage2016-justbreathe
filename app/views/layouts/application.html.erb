@@ -17,6 +17,15 @@
       <% end %>
 
       <%= yield %>
+
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key %> fade in">
+          <%= button_tag '&times', class: 'close', data: { dismiss: 'alert' }, 'aria-label' => 'close' %>
+          <%= message %>
+        </div>
+      <% end %>
+
+      <% flash.clear %>
     </div>
   </body>
 </html>
