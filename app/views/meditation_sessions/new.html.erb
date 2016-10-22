@@ -1,6 +1,8 @@
 <h2>Create a meditation session</h2>
 
 <%= form_for @session, url: { action: :create } do |f| %>
+  <%= render partial: 'shared/error_messages', locals: { model: @session } %>
+
   <div class="form-group">
     <%= f.label :duration %>
     <%= f.number_field :duration, required: true, min: 1 ,class: 'form-control'%>

@@ -12,7 +12,7 @@ class ParticipantsController < ApplicationController
     if @participant.save
       redirect_to @participant.meditation_session
     else
-      redirect_to root_path
+      render :new
     end
   end
 

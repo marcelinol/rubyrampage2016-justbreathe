@@ -1,6 +1,7 @@
 <h1>Hi participant!</h1>
 
 <%= form_for @participant, url: { action: :create } do |f| %>
+  <%= render partial: 'shared/error_messages', locals: { model: @participant } %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, required: false, class: 'form-control' %>
