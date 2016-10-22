@@ -9,7 +9,7 @@ class MeditationSessionsController < ApplicationController
     if @session.save
       redirect_to @session
     else
-      redirect_to root_path
+      render :new
     end
   end
 

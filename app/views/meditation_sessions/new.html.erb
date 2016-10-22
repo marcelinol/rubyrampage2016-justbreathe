@@ -1,19 +1,25 @@
-<h1>Create a meditation session</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Create a meditation session</h2>
 
-<%= form_for @session, url: { action: :create } do |f| %>
-  <p>
-    <%= f.label :duration %>
-    <%= f.number_field :duration, required: true %>
-  </p>
+    <%= form_for @session, url: { action: :create } do |f| %>
+      <%= render partial: 'shared/error_messages', locals: { model: @session } %>
 
-  <p>Participant</p>
+      <div class="form-group">
+        <%= f.label :duration %>
+        <%= f.number_field :duration, required: true, min: 1 ,class: 'form-control'%>
+      </div>
 
-  <%= f.fields_for :participants do |participants_form| %>
-    <p>
-      <%= participants_form.label :name %>
-      <%= participants_form.text_field :name %>
-    </p>
-  <% end %>
+      <h3>Participant</h3>
 
-  <%= f.submit 'Create session' %>
-<% end %>
+      <%= f.fields_for :participants do |participants_form| %>
+        <div class="form-group">
+          <%= participants_form.label :name %>
+          <%= participants_form.text_field :name, class: 'form-control'%>
+        </div>
+      <% end %>
+
+      <%= f.submit 'Create session', class: 'btn btn-info' %>
+    <% end %>
+  </div>
+</div>

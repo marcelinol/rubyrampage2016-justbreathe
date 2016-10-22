@@ -20,7 +20,7 @@
 
 <%= form_for @session, url: { action: :update } do |f| %>
   <%= f.hidden_field(:status, value: 'started') %>
-  <%= f.submit 'Start Meditating' %>
+  <%= f.submit 'Start Meditating', class: 'btn btn-success btn-lg' %>
 <% end %>
 
 <%= javascript_include_tag 'meditation_session/session_updater' %>
