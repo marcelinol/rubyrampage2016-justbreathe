@@ -36,7 +36,7 @@ class MeditationSessionsController < ApplicationController
 
   def search
     return if params[:q].blank?
-    @session = MeditationSession.find_by(id: params[:q])
+    @session = MeditationSession.waiting.find_by(id: params[:q])
     if @session
       redirect_to @session
     else
