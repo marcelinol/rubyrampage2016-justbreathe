@@ -7,7 +7,7 @@
 
       <div class="form-group">
         <%= f.label :duration %>
-        <%= f.number_field :duration, required: true, min: 1 ,class: 'form-control'%>
+        <%= f.select :duration, options_for_duration, {}, {class: 'form-control'} %>
       </div>
 
       <h3>Participant</h3>
