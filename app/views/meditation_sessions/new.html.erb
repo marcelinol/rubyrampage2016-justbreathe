@@ -1,19 +1,19 @@
-<h1>Create a meditation session</h1>
+<h2>Create a meditation session</h2>
 
 <%= form_for @session, url: { action: :create } do |f| %>
-  <p>
+  <div class="form-group">
     <%= f.label :duration %>
-    <%= f.number_field :duration, required: true, min: 1 %>
-  </p>
+    <%= f.number_field :duration, required: true, min: 1 ,class: 'form-control'%>
+  </div>
 
-  <p>Participant</p>
+  <h3>Participant</h3>
 
   <%= f.fields_for :participants do |participants_form| %>
-    <p>
+    <div class="form-group">
       <%= participants_form.label :name %>
-      <%= participants_form.text_field :name %>
-    </p>
+      <%= participants_form.text_field :name, class: 'form-control'%>
+    </div>
   <% end %>
 
-  <%= f.submit 'Create session' %>
+  <%= f.submit 'Create session', class: 'btn btn-info' %>
 <% end %>
