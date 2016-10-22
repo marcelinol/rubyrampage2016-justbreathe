@@ -1,10 +1,9 @@
 <h1>Hi participant!</h1>
 
 <%= form_for @participant, url: { action: :create } do |f| %>
-  <p>
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, required: false %>
-  </p>
-
-  <%= f.submit "Enter session" %>
+    <%= f.text_field :name, required: false, class: 'form-control' %>
+  </div>
+  <%= f.submit "Enter session", class: 'btn btn-info' %>
 <% end %>
