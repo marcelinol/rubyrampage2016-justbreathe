@@ -1,0 +1,10 @@
+<h1>Hi participant!</h1>
+
+<%= form_for @participant, url: { action: :create } do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: false %>
+  </p>
+
+  <%= f.submit "Enter session" %>
+<% end %>
