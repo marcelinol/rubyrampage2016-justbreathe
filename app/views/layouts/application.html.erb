@@ -12,13 +12,9 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-1 col-md-offset-5">
-          <%= link_to root_path do %>
-            <%= image_tag('meditation.svg', height: 50, width: 83.15) %>
-          <% end %>
-        </div>
-      </div>
+      <%= link_to root_path do %>
+        <%= image_tag('meditation.svg', height: 50, width: 83.15, class: 'img-responsive center-block') %>
+      <% end %>
 
       <%= yield %>
     </div>
