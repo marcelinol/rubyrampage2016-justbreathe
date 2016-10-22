@@ -1,7 +1,12 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <h1>Just Breathe...</h1>
-
-    <%= render partial: "#{@session.status}_room" %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Just Breathe...</h3>
+      </div>
+      <div class="panel-body">
+        <%= render partial: "#{@session.status}_room" %>
+      </div>
+    </div>
   </div>
 </div>
