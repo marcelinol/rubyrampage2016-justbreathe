@@ -1,25 +1,30 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <h2>Create a meditation session</h2>
-
-    <%= form_for @session, url: { action: :create } do |f| %>
-      <%= render partial: 'shared/error_messages', locals: { model: @session } %>
-
-      <div class="form-group">
-        <%= f.label :duration %>
-        <%= f.number_field :duration, required: true, min: 1 ,class: 'form-control'%>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Create a meditation session</h3>
       </div>
+      <div class="panel-body">
+        <%= form_for @session, url: { action: :create } do |f| %>
+        <%= render partial: 'shared/error_messages', locals: { model: @session } %>
 
-      <h3>Participant</h3>
-
-      <%= f.fields_for :participants do |participants_form| %>
         <div class="form-group">
-          <%= participants_form.label :name %>
-          <%= participants_form.text_field :name, class: 'form-control'%>
+          <%= f.label :duration %>
+          <%= f.number_field :duration, required: true, min: 1, class: 'form-control', placeholder: 'Minutes' %>
         </div>
-      <% end %>
+        <hr class="spacer-md"/>
+        <h4><strong>Participant</strong></h4>
 
-      <%= f.submit 'Create session', class: 'btn btn-info' %>
-    <% end %>
+        <%= f.fields_for :participants do |participants_form| %>
+        <div class="form-group">
+          <%= participants_form.label :name, class: 'sr-only' %>
+          <%= participants_form.text_field :name, class: 'form-control', placeholder: 'Name' %>
+        </div>
+        <% end %>
+
+        <%= f.submit 'Create session', class: 'btn btn-info btn-lg btn-block' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
