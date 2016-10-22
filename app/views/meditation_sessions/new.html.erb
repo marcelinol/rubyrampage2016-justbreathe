@@ -10,7 +10,7 @@
 
         <div class="form-group">
           <%= f.label :duration %>
-          <%= f.number_field :duration, required: true, min: 1, class: 'form-control', placeholder: 'Minutes' %>
+          <%= f.select :duration, options_for_duration, {}, {class: 'form-control'} %>
         </div>
         <hr class="spacer-md"/>
         <h4><strong>Participant</strong></h4>
