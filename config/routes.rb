@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :participants, only: [ :new, :create ]
   end
 
+  get :meditation_sessions, to: 'meditation_sessions#new'
+
   get 'welcome/index'
 
   root to: 'welcome#index'
