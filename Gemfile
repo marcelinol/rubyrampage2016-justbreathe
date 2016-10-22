@@ -17,6 +17,7 @@ gem 'timepiece', require: false
 
 ## Infra
 gem 'rollbar'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug', platform: :mri
