@@ -1,0 +1,11 @@
+<p>
+  Duration: <%= @session.duration %> minutes
+</p>
+
+<p>
+  Share Link: <%= @session.share_link %>
+</p>
+
+<p>
+  Participants: <%= @session.participants.pluck(:name).join(', ') %>
+</p>
