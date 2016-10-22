@@ -9,4 +9,11 @@
   <source src="<%= audio_path('bell.mp3') %>"></source>
 </audio>
 
+
+<%= button_tag 'sound', id: 'sound' %>
+
+<script>
+  $('#sound').on('click', function() { $('#bell')[0].play(); })
+</script>
+
 <%= javascript_include_tag 'meditation_session/finish_session.js' %>
