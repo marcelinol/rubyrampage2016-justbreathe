@@ -38,7 +38,7 @@ class MeditationSessionsController < ApplicationController
     return if params[:q].blank?
     @session = MeditationSession.waiting.find_by(id: params[:q])
     if @session
-      redirect_to @session
+      redirect_to new_meditation_session_participant_path(@session)
     else
       flash[:danger] = "Couldn't find session with ID #{params[:q]}"
       render :search
