@@ -11,7 +11,7 @@
       if(sessionData.status == 'started') {
         location.reload();
       } else {
-        $('#participants').text(sessionData.participants);
+        $('#participants').text('Participants: ' + sessionData.participants);
       }
     });
   }
