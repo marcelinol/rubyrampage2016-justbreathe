@@ -9,7 +9,7 @@
           <%= render partial: 'shared/error_messages', locals: { model: @participant } %>
           <div class="form-group">
             <%= f.label :name %>
-            <%= f.text_field :name, required: false, class: 'form-control' %>
+            <%= f.text_field :name, required: true, class: 'form-control', maxlength: 25 %>
           </div>
           <%= f.submit "Enter session", class: 'btn btn-info btn-lg btn-block' %>
         <% end %>
