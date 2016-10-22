@@ -3,6 +3,16 @@
 </p>
 
 <p>
+  Share link with other participants
+</p>
+
+<p>
+  <a href="<%= new_meditation_session_participant_path(@session) %>" target="_blank">
+    <%= new_meditation_session_participant_url(@session) %>
+  </a>
+</p>
+
+<p>
   Participants: <%= @session.participants.pluck(:name).join(', ') %>
 </p>
 
