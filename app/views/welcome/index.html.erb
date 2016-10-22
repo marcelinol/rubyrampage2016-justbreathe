@@ -1,16 +1,11 @@
 <div class="jumbotron">
-  <div class="container">
-    <h1>Relax and Just Breathe</h1>
-    <p>Start breathing to maintain focus on today...</p>
-    <p>Make sincronized meditation/mindfulness sessions with your colleagues</p>
+  <h1>Relax and Just Breathe</h1>
+  <p>Start breathing and keep your focus on today</p>
 
-    <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-primary btn-lg' %>
-  </div>
+  <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-primary btn-lg' %>
 </div>
+<p>Make sincronized meditation sessions with your colleagues</p>
 
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= image_tag('dog-meditation.jpg') %>
-  </div>
-</div>
+<p>
+  <%= image_tag 'dog-meditation.jpg', class: 'img-responsive center-block' %>
+</p>
