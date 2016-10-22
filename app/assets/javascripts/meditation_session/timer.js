@@ -4,5 +4,6 @@
   'use strict';
 
   var durationInSeconds = $($('#session-duration')[0]).data('duration') * 60000;
-  setInterval(function() { $('#fininsh-session').click(); }, durationInSeconds);
+  console.log(durationInSeconds);
+  setInterval(function() { $('#finish-session').click(); console.log('session finished') }, durationInSeconds);
 })(jQuery)
