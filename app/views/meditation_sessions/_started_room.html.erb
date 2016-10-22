@@ -1,1 +1,3 @@
-TIME
+<h2><%= countdown(Time.current + @session.duration.minutes) %></h2>
+
+<%= javascript_include_tag 'meditation_session/timer' %>

@@ -9,3 +9,8 @@
 <p>
   Participants: <%= @session.participants.pluck(:name).join(', ') %>
 </p>
+
+<%= form_for @session, url: { action: :update } do |f| %>
+  <%= f.hidden_field(:status, value: 'started') %>
+  <%= f.submit 'Start Meditating' %>
+<% end %>

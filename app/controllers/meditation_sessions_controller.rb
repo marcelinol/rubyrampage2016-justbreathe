@@ -20,14 +20,14 @@ class MeditationSessionsController < ApplicationController
   def update
     @session = MeditationSession.find(params[:id])
     if @session.update_attributes(session_params)
-      head :ok
+      redirect_to action: :show
     end
   end
 
   private
 
   def session_params
-    params.require(:meditation_session).permit(:duration,
+    params.require(:meditation_session).permit(:duration, :status,
                participants_attributes: [:id, :name])
   end
 end
