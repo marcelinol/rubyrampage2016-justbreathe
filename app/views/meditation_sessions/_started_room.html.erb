@@ -1,11 +1,8 @@
-<h2><%= countdown(Time.current + @session.duration.minutes) %></h2>
+<h2>Focus...</h2>
 
-<%= form_for @session, url: { action: :update } do |f| %>
+<%= form_for @session, url: { action: :update }, remote: true do |f| %>
   <%= f.hidden_field :status, value: :finished %>
-  <%= f.submit 'Finish session', class: 'btn btn-warning btn-lg', id: 'finish-session' %>
+  <%= f.submit 'Finish session', id: 'finish-session', class: 'btn btn-warning btn-lg btn-block' %>
 <% end %>
 
 <span id='session-duration' data-duration="<%= @session.duration %>">
-
-
-<%= javascript_include_tag 'meditation_session/timer' %>

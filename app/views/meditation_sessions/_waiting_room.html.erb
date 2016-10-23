@@ -17,9 +17,7 @@
 </div>
 <hr class="spacer-md"/>
 
-<%= form_for @session, url: { action: :update } do |f| %>
+<%= form_for @session, url: { action: :update }, remote: true do |f| %>
   <%= f.hidden_field :status, value: :started %>
-  <%= f.submit 'Start Meditating', class: 'btn btn-success btn-lg btn-block' %>
+  <%= f.submit 'Start Meditating', id: 'start-meditation', class: 'btn btn-success btn-lg btn-block' %>
 <% end %>
-
-<%= javascript_include_tag 'meditation_session/session_updater' %>
