@@ -12,13 +12,11 @@
           <%= f.label :duration %>
           <%= f.select :duration, options_for_duration, {}, {class: 'form-control'} %>
         </div>
-        <hr class="spacer-md"/>
-        <h4><strong>Participant</strong></h4>
 
         <%= f.fields_for :participants do |participants_form| %>
         <div class="form-group">
           <%= participants_form.label :name, class: 'sr-only' %>
-          <%= participants_form.text_field :name, class: 'form-control', placeholder: 'Name', maxlength: 25, required: true %>
+          <%= participants_form.text_field :name, class: 'form-control', placeholder: 'Your name', maxlength: 25, required: true %>
         </div>
         <% end %>
 
