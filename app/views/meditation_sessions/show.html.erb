@@ -5,7 +5,19 @@
         <h3>Just Breathe...</h3>
       </div>
       <div class="panel-body">
-        <%= render partial: "#{@session.status}_room" %>
+        <div id="waiting-room">
+          <%= render 'waiting_room' %>
+        </div>
+
+        <div id="started-room" class="hide">
+          <%= render 'started_room' %>
+        </div>
+
+        <div id="finished-room" class="hide">
+          <%= render 'finished_room' %>
+        </div>
+
+        <%= javascript_include_tag 'meditation_session' %>
       </div>
     </div>
   </div>

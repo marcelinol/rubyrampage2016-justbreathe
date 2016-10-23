@@ -30,7 +30,10 @@ class MeditationSessionsController < ApplicationController
   def update
     @session = MeditationSession.find(params[:id])
     if @session.update_attributes(session_params)
-      redirect_to action: :show
+      respond_to do |format|
+        format.html { redirect_to action: :show }
+        format.js { head :ok }
+      end
     end
   end
 
