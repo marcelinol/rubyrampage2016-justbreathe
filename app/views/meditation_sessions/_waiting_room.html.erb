@@ -5,9 +5,9 @@
 <div>
   <span>Share it with your colleagues and start the session whenever you are all ready.</span>
   <div class="input-group">
-    <input id="meditation-room" type="text" class="form-control" value="<%= new_meditation_session_participant_url(@session) %>" >
+    <input id="meditation-room" type="text" class="form-control" value="Share it with your colleagues and start the session whenever you are all ready." disabled >
     <span class="input-group-btn">
-      <button class="btn btn-default" type="button" data-clipboard-target="#meditation-room">
+      <button class="btn btn-default" type="button" data-clipboard-text="<%= new_meditation_session_participant_url(@session) %>">
         <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
       </button>
     </span>
