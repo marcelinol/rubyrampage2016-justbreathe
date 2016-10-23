@@ -4,9 +4,14 @@
 
 <div>
   <span>Share link with other participants</span>
-  <button class="btn btn-default" data-clipboard-text="<%= new_meditation_session_participant_url(@session) %>">
-    <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
-  </button>
+  <div class="input-group">
+    <input id="meditation-room" type="text" class="form-control" value="<%= new_meditation_session_participant_url(@session) %>" >
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button" data-clipboard-target="#meditation-room">
+        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+      </button>
+    </span>
+  </div>
 </div>
 
 <div id='participants'>
