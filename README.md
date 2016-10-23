@@ -32,6 +32,8 @@ We implemented the app during [Ruby Rampage](https://www.rubyrampage.com/) 2016 
 - Make sure to add tests for it.
 - Open a Pull Request
 
+If you are new to Open Source world, take a look at the [Contributor Convent](http://contributor-covenant.org/).
+
 ### Setup
 
 - Clone the repo
