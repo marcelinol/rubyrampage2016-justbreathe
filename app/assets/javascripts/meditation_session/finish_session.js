@@ -10,4 +10,8 @@
     }, 3*1000)
   });
 
+  $('#play-now').on('click', function() {
+    bell.play();
+  });
+
 })(jQuery)
