@@ -43,6 +43,11 @@ bundle install
 
 - Be happy.
 
+## Contributors
+- [Lucas Alencar](https://github.com/lucasalencar)
+- [Diogo Busanello](https://github.com/dbusanello)
+- [Luciano Medeiros](https://github.com/marcelinol)
+
 ## License
 
 Just Breathe is released under the [MIT License](https://opensource.org/licenses/MIT).
