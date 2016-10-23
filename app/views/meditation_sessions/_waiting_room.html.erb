@@ -1,15 +1,18 @@
 <p>
   You have joined a <%= @session.duration %> minutes meditation session.
 </p>
-<p>
-  Share it with your colleagues and start the session whenever you are all ready.
-</p>
 
-<p>
-  <a href="<%= new_meditation_session_participant_path(@session) %>" target="_blank">
-    <%= new_meditation_session_participant_url(@session) %>
-  </a>
-</p>
+<div>
+  <span>Share it with your colleagues and start the session whenever you are all ready.</span>
+  <div class="input-group">
+    <input id="meditation-room" type="text" class="form-control" value="<%= new_meditation_session_participant_url(@session) %>" >
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button" data-clipboard-target="#meditation-room">
+        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+      </button>
+    </span>
+  </div>
+</div>
 
 Beautiful people waiting to meditate together: <span id='participants'><%= @session.participants.pluck(:name).join(', ') %></span>
 <hr class="spacer-md"/>
@@ -19,3 +22,5 @@ Beautiful people waiting to meditate together: <span id='participants'><%= @sess
   <%= f.submit 'Start Meditating', id: 'start-meditation', class: 'btn btn-success btn-lg btn-block' %>
   <center><small class="text-muted">No one will be allowed to join the session after you start it.</small></center>
 <% end %>
+
+<%= javascript_include_tag 'share_link' %>
