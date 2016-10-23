@@ -6,9 +6,7 @@
 
 <%= audio_tag('bell.mp3') %>
 <audio id="bell" hidden='true' controls>
-  <source src="<%= audio_path('bell.mp3') %>" type='audio/mpeg'></source>
+  <source src="<%= audio_path('bell.mp3') %>"></source>
 </audio>
-
-
 
 <%= javascript_include_tag 'meditation_session/finish_session.js' %>
