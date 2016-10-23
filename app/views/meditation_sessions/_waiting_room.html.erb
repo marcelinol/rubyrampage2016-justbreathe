@@ -1,23 +1,39 @@
 <p>
-  <strong>Duration:</strong> <%= @session.duration %> minutes
+  Welcome! You have joined a <strong><%= pluralize(@session.duration, 'minute') %></strong> meditation session.
 </p>
-
 <p>
-  Share link with other participants
+  Beautiful people waiting to meditate together: <span id='participants'><%= @session.participants.pluck(:name).join(', ') %></span>
 </p>
 
-<p>
-  <a href="<%= new_meditation_session_participant_path(@session) %>" target="_blank">
-    <%= new_meditation_session_participant_url(@session) %>
-  </a>
+<hr class="spacer-md"/>
+<p class='lead'>
+  Share it!
 </p>
-
-<div id='participants'>
-  Participants: <%= @session.participants.pluck(:name).join(', ') %>
+<div>
+  <p>Share your session with your colleagues and start it whenever you are all ready.</p>
+  <p>You can share your session by <i>Session ID</i> or <i>Session Link</i></p>
+  <p class='lead text-center'>
+    Your session ID is <strong><%= @session.id %></strong>
+  </p>
+  <p>
+    <div class="input-group">
+      <input id="meditation-room" type="text" class="form-control" value="Copy link to clipboard" disabled >
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" data-clipboard-text="<%= new_meditation_session_participant_url(@session) %>">
+          <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>
+  </p>
 </div>
+
+
 <hr class="spacer-md"/>
 
 <%= form_for @session, url: { action: :update }, remote: true do |f| %>
   <%= f.hidden_field :status, value: :started %>
   <%= f.submit 'Start Meditating', id: 'start-meditation', class: 'btn btn-success btn-lg btn-block' %>
+  <center><small class="text-muted">No one will be allowed to join the session after you start it.</small></center>
 <% end %>
+
+<%= javascript_include_tag 'share_link' %>
