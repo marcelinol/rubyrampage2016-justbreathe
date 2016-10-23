@@ -5,27 +5,30 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-
     <div class="panel panel-default">
       <div class="panel-body">
           <p class='lead'>
             Create a meditation session and invite your friends
           </p>
-          <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-primary btn-lg btn-block' %>
+          <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-success btn-lg btn-block' %>
         <hr class="spacer-md"/>
 
         <%= form_tag meditation_sessions_search_path, method: :get do %>
           <div class="form-group">
-            <%= label_tag :q, 'Or join an existing session', class: 'lead' %>
+            <%= label_tag :q, 'Join an existing session', class: 'lead' %>
             <%= number_field_tag :q, nil, class: 'form-control', placeholder: 'Meditation session ID' %>
           </div>
-          <%= submit_tag 'Go', class: 'btn btn-primary btn-lg btn-block' %>
+          <%= submit_tag 'Join session', class: 'btn btn-primary btn-lg btn-block' %>
         <% end %>
       </div>
     </div>
+    <p class='text-center'>
+      <%= link_to 'Benefits of meditation','http://lifehacker.com/what-happens-to-the-brain-when-you-meditate-and-how-it-1202533314', target: '_blank', title: 'Benefits of meditation' %>
+      <small>by Belle Beth Cooper</small>
+    </p>
+    <p class='text-center'>
+      <%= link_to 'How to meditate','http://alifeofproductivity.com/meditation-guide/', target: '_blank', title: 'How to meditate' %>
+      <small>by Chris Bailey</small>
+    </p>
   </div>
 </div>
-
-<p>
-  <%= image_tag 'dog-meditation.jpg', class: 'img-responsive center-block', width: 150 %>
-</p>
