@@ -1,9 +1,8 @@
 <p>
-  <strong>Duration:</strong> <%= @session.duration %> minutes
+  You have joined a <%= @session.duration %> minutes meditation session.
 </p>
-
 <p>
-  Share link with other participants
+  Share it with your colleagues and start the session whenever you are all ready.
 </p>
 
 <p>
@@ -12,12 +11,11 @@
   </a>
 </p>
 
-<div id='participants'>
-  Participants: <%= @session.participants.pluck(:name).join(', ') %>
-</div>
+Beautiful people waiting to meditate together: <span id='participants'><%= @session.participants.pluck(:name).join(', ') %></span>
 <hr class="spacer-md"/>
 
 <%= form_for @session, url: { action: :update }, remote: true do |f| %>
   <%= f.hidden_field :status, value: :started %>
   <%= f.submit 'Start Meditating', id: 'start-meditation', class: 'btn btn-success btn-lg btn-block' %>
+  <center><small class="text-muted">No one will be allowed to join the session after you start it.</small></center>
 <% end %>

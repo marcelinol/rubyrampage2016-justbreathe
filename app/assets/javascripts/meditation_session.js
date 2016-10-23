@@ -24,7 +24,7 @@
       if(sessionData.status === 'started') {
         $('#start-meditation').click();
       } else {
-        $('#participants').text('Participants: ' + sessionData.participants);
+        $('#participants').text(sessionData.participants);
       }
     }, 'json');
   }
