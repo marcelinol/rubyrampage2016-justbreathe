@@ -1,12 +1,31 @@
-<div class="jumbotron">
-  <h1>Relax and Just Breathe</h1>
-  <p>Start breathing and keep your focus on today</p>
-
-  <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-primary btn-lg' %>
-  <%= link_to 'Find a meditation session', meditation_sessions_search_path, class: 'btn btn-link' %>
+<div class="text-center page-header">
+  <h1>Just Breathe</h1>
+  <h1><small>Make synchronized meditation sessions with your colleagues.</small></h1>
 </div>
-<p>Make sincronized meditation sessions with your colleagues</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <p class='lead'>
+            Create a meditation session and invite your friends
+          </p>
+          <%= link_to 'Create a meditation session', new_meditation_session_path, class: 'btn btn-primary btn-lg btn-block' %>
+        <hr class="spacer-md"/>
+
+        <%= form_tag meditation_sessions_search_path, method: :get do %>
+          <div class="form-group">
+            <%= label_tag :q, 'Or join an existing session', class: 'lead' %>
+            <%= number_field_tag :q, nil, class: 'form-control', placeholder: 'Meditation session ID' %>
+          </div>
+          <%= submit_tag 'Go', class: 'btn btn-primary btn-lg btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>
-  <%= image_tag 'dog-meditation.jpg', class: 'img-responsive center-block' %>
+  <%= image_tag 'dog-meditation.jpg', class: 'img-responsive center-block', width: 150 %>
 </p>
