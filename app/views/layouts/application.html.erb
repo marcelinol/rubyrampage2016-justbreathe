@@ -6,7 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon-192x192.png', type: 'image/png' %>
+    <%= favicon_link_tag 'favicon-192x192.png', rel: 'apple-touch-icon', type: 'image/png', sizes: '120x120' %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#79C1DD">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#79C1DD">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
 
@@ -20,7 +29,7 @@
 
       <% flash.each do |key, message| %>
         <div class="alert alert-<%= key %> fade in">
-          <%= button_tag '&times', class: 'close', data: { dismiss: 'alert' }, 'aria-label' => 'close' %>
+          <%= button_tag '&times;'.html_safe, class: 'close', data: { dismiss: 'alert' }, 'aria-label' => 'close' %>
           <%= message %>
         </div>
       <% end %>
