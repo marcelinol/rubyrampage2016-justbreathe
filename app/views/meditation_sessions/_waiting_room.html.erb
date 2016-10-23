@@ -2,15 +2,12 @@
   <strong>Duration:</strong> <%= @session.duration %> minutes
 </p>
 
-<p>
-  Share link with other participants
-</p>
-
-<p>
-  <a href="<%= new_meditation_session_participant_path(@session) %>" target="_blank">
-    <%= new_meditation_session_participant_url(@session) %>
-  </a>
-</p>
+<div>
+  <span>Share link with other participants</span>
+  <button class="btn btn-default" data-clipboard-text="<%= new_meditation_session_participant_url(@session) %>">
+    <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+  </button>
+</div>
 
 <div id='participants'>
   Participants: <%= @session.participants.pluck(:name).join(', ') %>
@@ -21,3 +18,5 @@
   <%= f.hidden_field :status, value: :started %>
   <%= f.submit 'Start Meditating', id: 'start-meditation', class: 'btn btn-success btn-lg btn-block' %>
 <% end %>
+
+<%= javascript_include_tag 'share_link' %>
