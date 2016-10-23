@@ -9,18 +9,18 @@ Make synchronized meditation sessions with your colleagues.
 
 ## Description
 
-Just Breathe is a web app which allow you to create a meditation session where you and your colleagues can join to meditate synchronized. The user who creates the session defines the time that the meditation session will last and it starts and ends at the same time for all participants of the session.
+Just Breathe is a web app which allows you to create a meditation session where you and your colleagues can join to meditate synchronized. The user who creates the session defines the time that the meditation session will last and it starts and ends at the same time for all participants of the session.
 
 ### Origin
 
-The idea came from @lucasalencar since we meditate in group at work and we use a not synchronized app. So, everytime someone is responsible for tell the others that the session ended.
+The idea came from [@lucasalencar](https://github.com/lucasalencar) since we meditate in group at work and we use a not synchronized app. So, every time someone is responsible of telling the others that the session has ended.
 
 We implemented the app during [Ruby Rampage](https://www.rubyrampage.com/) 2016 competition.
 
 ## Using it
 
     - [Access the app](http://justbreathe.2016.rubyrampage.com/)
-    - Enjoy :smile:
+    - Just Breathe :smile:
 
 ## Contribute
 
