@@ -19,18 +19,14 @@
   });
 
   var updateSessionInfo = function() {
-    $.ajax({
-      url: location.pathname,
-      type: 'GET',
-      dataType: "json"
-    }).success(function(data) {
+    $.get(location.pathname, function(data) {
       var sessionData = data.meditation_session;
       if(sessionData.status === 'started') {
         $('#start-meditation').click();
       } else {
         $('#participants').text('Participants: ' + sessionData.participants);
       }
-    });
+    }, 'json');
   }
 
   var setupTimer = function() {
