@@ -3,15 +3,16 @@
   var bell = $('#bell')[0];
   bell.play();
 
-  $('#play').on('click', function() {
+  var playLater = function() {
     var interval = setInterval(function(){
       bell.play();
       clearInterval(interval);
-    }, 3*1000)
-  });
+    }, 10*1000)
+  };
 
   $('#play-now').on('click', function() {
     bell.play();
+    playLater();
   });
 
 })(jQuery)
