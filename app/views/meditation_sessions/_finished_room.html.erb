@@ -2,3 +2,8 @@
 <p><i>Peace comes from within. Do not seek it without.</i></p>
 
 <p><%= link_to 'Back to Meditating Dog', root_path, class: 'btn btn-info btn-block' %></p>
+
+<%= audio_tag('bell.mp3') %>
+<audio id="bell" hidden='true' controls>
+  <source src="<%= audio_path('bell.mp3') %>"></source>
+</audio>

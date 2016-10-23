@@ -1,8 +1,9 @@
-//= require audio_playback
+//= require timepiece
 
 (function($) {
   'use strict';
 
+  var bell = $('#bell')[0];
   var sessionDuration = $('#session-duration').first().data('duration') * 60000;
   var sessionInterval;
   var pollingInterval = setInterval(function() {
@@ -37,8 +38,8 @@
   var startSession = function() {
     $('#started-room').fadeIn('slow').removeClass('hide');
     $('#waiting-room, #finished-room').fadeOut('slow').addClass('hide');
-    $(window).trigger('start-session');
 
+    bell.play();
     setupTimer();
     clearInterval(pollingInterval);
   }
@@ -46,8 +47,8 @@
   var finishSession = function() {
     $('#finished-room').fadeIn('slow').removeClass('hide');
     $('#waiting-room, #started-room').fadeOut('slow').addClass('hide');
-    $(window).trigger('finish-session');
 
+    bell.play();
     if (sessionInterval) {
       clearInterval(sessionInterval);
     }
