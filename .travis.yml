@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.2.2
+env:
+  DB=postgresql
+script:
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+addons:
+  code_climate:
+    repo_token: a3d4206620a71f4af016c7683d5e36522777c9c289cc6379095cb542c23c85da

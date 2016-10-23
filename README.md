@@ -4,8 +4,7 @@ Make synchronized meditation sessions with your colleagues.
 
 ## Code Status
 
-
-[![Code Climate](https://codeclimate.com/github/rumblex/rubyrampage2016-justbreathe/badges/gpa.svg)](https://codeclimate.com/github/rumblex/rubyrampage2016-justbreathe)
+[![Code Climate](https://codeclimate.com/github/rumblex/rubyrampage2016-justbreathe/badges/gpa.svg)](https://codeclimate.com/github/rumblex/rubyrampage2016-justbreathe) [![Build Status](https://travis-ci.org/rumblex/rubyrampage2016-justbreathe.svg?branch=integrations)](https://travis-ci.org/rumblex/rubyrampage2016-justbreathe)
 
 ## Description
 
