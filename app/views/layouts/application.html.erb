@@ -6,8 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag 'favicon-192x192.png', type: 'image/png' %>
-    <%= favicon_link_tag 'favicon-192x192.png', rel: 'apple-touch-icon', type: 'image/png', sizes: '120x120' %>
+    <%= favicon_link_tag 'favicon-192x192-mobile.png', type: 'image/png', sizes: '192x192' %>
+    <%= favicon_link_tag 'favicon-192x192-mobile.png', rel: 'apple-touch-icon', type: 'image/png', sizes: '128x128' %>
+    <%= favicon_link_tag 'favicon-192x192-mobile.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '128x128' %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,7 +23,7 @@
   <body>
     <div class="container">
       <%= link_to root_path do %>
-        <%= image_tag('meditation.svg', height: 50, width: 83.15, class: 'img-responsive center-block') %>
+        <%= image_tag('favicon-192x192.png', width: 80, class: 'img-responsive center-block') %>
       <% end %>
 
       <%= yield %>
