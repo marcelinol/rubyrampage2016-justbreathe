@@ -1,4 +1,5 @@
-<h2>Focus...</h2>
+<h2 class='text-center'>Focus...</h2>
+<h3 class='text-center'><small>A bell will ring when the session finishes.</small></h2>
 
 <%= form_for @session, url: { action: :update }, remote: true do |f| %>
   <%= f.hidden_field :status, value: :finished %>
