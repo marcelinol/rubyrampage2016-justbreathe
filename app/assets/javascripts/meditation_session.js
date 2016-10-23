@@ -36,8 +36,8 @@
   }
 
   var startSession = function() {
-    $('#started-room').removeClass('hide');
-    $('#waiting-room, #finished-room').addClass('hide');
+    $('#started-room').fadeIn('slow').removeClass('hide');
+    $('#waiting-room, #finished-room').fadeOut('slow').addClass('hide');
 
     bell.play();
     setupTimer();
@@ -45,8 +45,8 @@
   }
 
   var finishSession = function() {
-    $('#finished-room').removeClass('hide');
-    $('#waiting-room, #started-room').addClass('hide');
+    $('#finished-room').fadeIn('slow').removeClass('hide');
+    $('#waiting-room, #started-room').fadeOut('slow').addClass('hide');
 
     bell.play();
     if (sessionInterval) {
