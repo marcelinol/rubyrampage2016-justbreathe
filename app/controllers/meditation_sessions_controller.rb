@@ -21,8 +21,7 @@ class MeditationSessionsController < ApplicationController
       format.js {
         ## We should send all the participants objects and not only the names of them.
         ## With the objects, we can create a better list in the view.
-        participants_names = { participants: @session.participants.pluck(:name).join(', ') }
-        render json: { meditation_session: @session.as_json.merge(participants_names) }
+        render json: @session, include: :participants
       }
     end
   end

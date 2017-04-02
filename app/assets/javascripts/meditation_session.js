@@ -20,11 +20,11 @@
 
   var updateSessionInfo = function() {
     $.get(location.pathname, function(data) {
-      var sessionData = data.meditation_session;
+      var sessionData = data;
       if(sessionData.status === 'started') {
         $('#start-meditation').click();
       } else {
-        $('#participants').text(sessionData.participants);
+        $(document).trigger('updateSessionInfo', sessionData);
       }
     }, 'json');
   }
