@@ -32,7 +32,7 @@
 
 
 <hr class="spacer-md"/>
-  <div class="imput-group">
+  <div class="input-group">
     <span class="input-group-addon">
       <input type="checkbox" aria-label="ready">
       I am ready
@@ -47,7 +47,7 @@
 
 <div id="js-participants-ready-state">
   <% @session.participants.each do |participant| %>
-    <div class="imput-group">
+    <div class="input-group">
       <% ready_status = participant.ready? ? 'checked' : '' %>
       <input data-participant-id='<%= participant.id %>' type="checkbox" aria-label="ready" text='xunda' disabled='true' <%= ready_status %> >
       <%= participant.name %>
